@@ -7,14 +7,14 @@
 - V1.1 增加题目行数为3的支持
 
 ## HOW TO USE
-### 所需工具
+### TOOLS
 - Python 3.6 
 - 依赖库：pytesseract、opencv、os、requests
 - tesseract-ocr 及其简体中文包（包含在Tools文件夹）
 - adb调试工具（包含在Tools文件夹）
 - 一部安卓手机和一条数据线
 
-### 步骤
+### STEPS
 - 安装以上所有所需软件，并配置`环境变量`以在命令行下使用。
 - 将手机设置为：设置 → 开发者选项`on` → USB调试`on`，用数据线将手机与电脑相连接，在命令行模式下输入 `adb devices`，若返回一串数字字母组合和device，即表示连接成功。我们需要将答题界面的截图发送至电脑。调用`python`中的`os.system()`函数，即为：
     ```python
