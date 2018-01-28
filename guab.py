@@ -3,21 +3,27 @@ import cv2
 import os
 import requests
 
-os.system("adb shell screencap -p /sdcard/DCIM/demo/demo.png")
-os.system("adb pull /sdcard/DCIM/demo/demo.png C:/Users/Phun/Desktop/guab")
+#os.system("adb shell screencap -p /sdcard/DCIM/demo/demo.png")
+#os.system("adb pull /sdcard/DCIM/demo/demo.png C:/Users/Phun/Desktop/guab")
 
 a = cv2.imread('demo.png')
-flag = 0
+flag = 1
 
-
-for i in range(420,440):
+for i in range(420,470):
     for j in range(86,130):
         # print(a[i,j,0])
         if a[i,j,0] != 255:
-           flag = 1
+           flag = 2
            break
 
-if flag == 0:    
+for i in range(495,545):
+    for j in range(86,130):
+        # print(a[i,j,0])
+        if a[i,j,0] != 255:
+           flag = 3
+           break
+
+if flag == 1:    
     title = a[268:485,75:1005]
     ans_1 = a[500:600,105:970]
     ans_2 = a[640:740,105:970]
@@ -25,12 +31,17 @@ if flag == 0:
 # cv2.imshow('view',ans_3)
 # cv2.waitKey(0)
 
-elif flag == 1:
+elif flag == 2:
     title = a[328:531,75:1005]
     ans_1 = a[570:670,105:970]
     ans_2 = a[710:810,105:970]
     ans_3 = a[850:950,105:970]
     
+elif flag == 3:
+    title = a[325:560,75:1005]
+    ans_1 = a[650:750,105:970]
+    ans_2 = a[790:890,105:970]
+    ans_3 = a[930:1030,105:970]
 
 title_fin=pytesseract.image_to_string(title,lang='chi_sim').replace(" ","")
 ans_1_fin=pytesseract.image_to_string(ans_1,lang='chi_sim').replace(" ","")
