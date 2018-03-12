@@ -1,5 +1,6 @@
 # Guab
 
+**不更新了，因为我不玩了，哈哈**
 ## ABOUT
 一个Android版`冲顶大会`的Python辅助程序。
 
